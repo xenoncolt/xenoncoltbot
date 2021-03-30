@@ -2,10 +2,11 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'xenon',
+  permissions: [ ],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
   async execute(Discord, client, message, args, cmd) {
     if (!args[0]) return message.channel.send('Please ask a full question!'); 
-    const replies = ['Yes.', 'No.', 'Never.', 'Definitely.', 'Ask again later.', 'Are you serious!!!', 'Shut up', 'I do not know', 'Why are you asking me this!!!:unamused:']; 
+    const replies = ['Yes.', 'No.', 'Never.', 'Definitely.', 'Ask again later.', 'Are you serious!!!', 'Shut up', 'I do not know', 'Why are you asking me this!!!:unamused:', 'Maybe']; 
 
     const result = Math.floor(Math.random() * replies.length); 
     const question = args.join(' '); 
@@ -18,7 +19,7 @@ module.exports = {
         .addField('Answer:', replies[result]);
       await message.channel.send(embed); 
     } else {
-      await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); // no permissins so bot will default to a raw message
+      await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); 
     }
   },
 };

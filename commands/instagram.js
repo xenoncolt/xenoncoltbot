@@ -1,5 +1,7 @@
 module.exports = {
     name: 'instagram',
+    aliases: ['insta'],
+    permissions: [ ],
     description: "This is a instagram link command!",
     execute(Discord, client, message, args, cmd) {
         const newEmbed = new Discord.MessageEmbed()

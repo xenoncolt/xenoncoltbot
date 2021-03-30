@@ -10,7 +10,7 @@ client.events = new Discord.Collection();
 
 client.once('ready', () => {
     console.log('xenon command is online!');
-    client.user.setActivity('Prefix x | xhelp', { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity(`${client.guilds.cache.map(s => s.memberCount).reduce((a, b) => a + b)} Users | +help`, { type: 'WATCHING' });
 });
 
 
