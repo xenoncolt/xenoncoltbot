@@ -1,0 +1,23 @@
+{
+  "name": "xenon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xenon Colt",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "anime-images-api": "^1.0.26",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "ffmpeg-static": "^4.2.8",
+    "fs": "0.0.1-security",
+    "images-scraper": "^6.2.1",
+    "weather-js": "^2.0.0",
+    "yt-search": "^2.7.5",
+    "ytdl-core": "^4.5.0"
+  }
+}
