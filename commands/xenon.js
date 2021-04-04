@@ -14,7 +14,7 @@ module.exports = {
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
       const embed = new MessageEmbed() 
         .setAuthor('Xenon says...')
-        .setColor('#F61386')
+        .setColor('RANDOM')
         .addField('Question:', question)
         .addField('Answer:', replies[result]);
       await message.channel.send(embed); 
