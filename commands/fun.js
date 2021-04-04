@@ -1,7 +1,7 @@
 const https = require('https');
 
 module.exports = {
-  name: 'xenon',
+  name: 'fun',
   aliases: ['hug', 'kiss', 'punch', 'rand'],
   permissions: ["SEND_MESSAGES"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
