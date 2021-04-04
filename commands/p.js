@@ -1,6 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
-var { getData, getPreview } = require("spotify-url-info");
+const spotify = require("spotify-url-info");
 
 const queue = new Map();
 
