@@ -20,7 +20,8 @@ module.exports = {
         { name: 'weather (City name, Country name)', value: 'Weather Information', inline: true },
         { name: 'xenon (ask a qus)', value: 'Bot will answer your question.', inline: true },
         { name: 'invite', value: 'Invite Link', inline: true },
-        { name: 'clear/clr/delete', value: '1~100 Clear message.', inline: true }
+        { name: 'clear/clr/delete', value: '1~100 Clear message.', inline: true },
+        { name: 'remind {time(d,h,m,s)} (remind message) ', value: 'I will DM you the reminder message.', inline: true }
     )
     .setImage('https://www.spigotmc.org/attachments/cool-text-commands-271055509278412-png.307323/')
     .setFooter('Attenion: You must use "prefix" before write a command!');
