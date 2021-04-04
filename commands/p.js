@@ -1,6 +1,5 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
-const spotify = require("spotify-url-info");
 
 const queue = new Map();
 
@@ -31,35 +30,21 @@ module.exports = {
             if (ytdl.validateURL(args[0])) {
                 const song_info = await ytdl.getInfo(args[0]);
                 song = { title: song_info.videoDetails.title, url: song_info.videoDetails.video_url }
-            } else if (args[0].includes('spotify')) {
-                const spotifyTrackInfo = await getPreview(args[0]);
+            } else {
                 
                 const video_finder = async (query) =>{
                     const video_result = await ytSearch(query);
                     return (video_result.videos.length > 1) ? video_result.videos[0] : null;
-                };
+                }
 
-                const video = await videoFinder(`${spotifyTrackInfo.title} ${spotifyTrackInfo.artist}`);
-
-
+                const video = await video_finder(args.join(' '));
                 if (video){
                     song = { title: video.title, url: video.url }
                 } else {
                      message.channel.send('Xenon can not finding song.');
                 }
-            } else {
-				const videoFinder = async (query) => {
-					const videoResult = await ytSearch(query);
-					return videoResult.videos.length > 1 ? videoResult.videos[0] : null;
-				};
-				const video = await videoFinder(args.join(''));
 
-				if (video) {
-					song = { title: video.title, url: video.url };
-				} else {
-					message.reply('Xenon can not finding song.');
-				}
-			}
+            }
 
             
             if (!server_queue){
