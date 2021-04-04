@@ -2,7 +2,7 @@ const ms = require('ms')
 
 module.exports = {
     name: "remind",
-    category: "utility",
+    permissions: ["SEND_MESSAGES"],
     description:{
         usage: "remind <time> <reminder>",
         content:  "Helps remind you something",
