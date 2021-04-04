@@ -22,13 +22,14 @@ module.exports = {
         .setDescription(`**${current.skytext}**`)
         .setAuthor(`Weather forecast for ${current.observationpoint}`)
         .setThumbnail(current.imageUrl)
-        .setColor('#EBEC5E')
+        .setColor('RANDOM')
         .addField('Timezone', `UTC${location.timezone}`, true)
         .addField('Degree Type', 'Celsius', true)
         .addField('Temperature', `${current.temperature}°`, true)
         .addField('Wind', current.winddisplay, true)
         .addField('Feels like', `${current.feelslike}°`, true)
         .addField('Humidity', `${current.humidity}%`, true)
+        .setTimestamp()
         .setFooter('Happy Journey from Xenon.');
 
         message.channel.send(weatherinfo)
