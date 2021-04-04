@@ -113,3 +113,13 @@ const stop_song = (message, server_queue) => {
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
 }
+if(args[0] == "pause"){
+    if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");
+    server_queue.connection.dispatcher.pause();
+    message.channel.send("Paused the song!");
+}
+if(args[0] == "resume"){
+    if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");
+    server_queue.connection.dispatcher.resume();
+    message.channel.send("Xenon started singing again the song!");
+}
