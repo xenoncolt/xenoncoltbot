@@ -3,7 +3,9 @@ const Discord = require('discord.js'); // defining Discord
 
 module.exports = {
     name: "spotifysearch",
-    description: "idek",
+    aliases: ['spoti'],
+    permissions: ["SEND_MESSAGES"],
+    description: "This is a spotify search command link.",
 
     async execute(Discord, client, message, args, cmd){
         let msglink = args.join('%20') 
