@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'xenon',
-  permissions: [ ],
+  permissions: ["SEND_MESSAGES"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
   async execute(Discord, client, message, args, cmd) {
     if (!args[0]) return message.channel.send('Please ask a full question!'); 

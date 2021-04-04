@@ -1,7 +1,7 @@
 module.exports = {
     name: 'facebook',
     aliases: ['fb'],
-    permissions: [ ],
+    permissions: ["SEND_MESSAGES"],
     description: "This is a facebook link command!",
     execute(Discord, client, message, args, cmd) {
         const newEmbed = new Discord.MessageEmbed()

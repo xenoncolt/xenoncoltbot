@@ -1,7 +1,7 @@
 module.exports = {
     name: 'avatar',
     aliases: ['icon', 'pfp', 'profilepic'],
-    permissions: [ ],
+    permissions: ["SEND_MESSAGES"],
     description: 'Return a user(s) avatar picture!',
     //Use your own execute parameters
     execute(Discord, client, message, args, cmd) {

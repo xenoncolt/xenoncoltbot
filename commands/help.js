@@ -1,6 +1,6 @@
 module.exports = {
     name: 'help',
-    permissions: [ ],
+    permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd) {
         const newEmbed = new Discord.MessageEmbed()

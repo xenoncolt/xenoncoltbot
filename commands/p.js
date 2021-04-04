@@ -6,7 +6,7 @@ const queue = new Map();
 module.exports = {
     name: 'p',
     aliases: ['skip', 'stop'],
-    permissions: [ ], 
+    permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
         
