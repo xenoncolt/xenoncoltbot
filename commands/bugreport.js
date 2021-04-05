@@ -1,4 +1,3 @@
-const { execute } = require("./say");
 
 module.exports = {
     name: "bugreport",
