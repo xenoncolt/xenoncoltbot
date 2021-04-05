@@ -20,7 +20,7 @@ module.exports = {
         { name: 'weather (City name, Country name)', value: 'Weather Information', inline: true },
         { name: 'xenon (ask a qus)', value: 'Bot will answer your question.', inline: true },
         { name: 'invite', value: 'Invite Link', inline: true },
-        { name: 'clear/clr/delete', value: '1~100 Clear message.', inline: true },
+        { name: 'clear/clr/delete', value: '1~100 Clear message.(only admin)', inline: true },
         { name: 'remind {time(d,h,m,s)} (remind message) ', value: 'I will DM you the reminder message.', inline: true },
         { name: 'spotifysearch/spoti (song name)', value: 'search a song in spotify', inline: true },
         { name: 'reportbug/bug/bugreport/problem (Write what is your problem)', value: 'If you see a bug or problem in this bot. You can use this command and say the problem i will fix this.', inline: true }
