@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'p',
-    aliases: ['skip', 'stop'],
+    aliases: ['skip', 'stop', 'pause', 'resume'],
     permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
@@ -23,7 +23,7 @@ module.exports = {
 
         
         if (cmd === 'p'){
-            if (!args.length) return message.channel.send('You need to send **xp with music name or link**!');
+            if (!args.length) return message.channel.send('You need to send **+p with music name or link**!');
             let song = {};
 
             
@@ -78,6 +78,8 @@ module.exports = {
 
         else if(cmd === 'skip') skip_song(message, server_queue);
         else if(cmd === 'stop') stop_song(message, server_queue);
+        else if(cmd === 'pause') pause_song(message, server_queue);
+        else if(cmd === 'resume') resume_song(message, server_queue);
     }
     
 }
@@ -112,4 +114,20 @@ const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to stop music!');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
+}
+
+const pause_song = (message, server_queue) => {
+    if(args[0] == "pause"){
+        if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");
+        server_queue.connection.dispatcher.pause();
+        message.channel.send("Paused the song!");
+      }
+}
+
+const resume_song = (message, server_queue) => {
+    if(args[0] == "resume"){
+        if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");
+        server_queue.connection.dispatcher.resume();
+        message.channel.send("resumed the song!");
+      }
 }
