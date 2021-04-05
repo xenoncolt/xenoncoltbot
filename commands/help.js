@@ -23,6 +23,7 @@ module.exports = {
         { name: 'clear/clr/delete', value: '1~100 Clear message.', inline: true },
         { name: 'remind {time(d,h,m,s)} (remind message) ', value: 'I will DM you the reminder message.', inline: true },
         { name: 'spotifysearch/spoti (song name)', value: 'search a song in spotify', inline: true },
+        { name: 'reportbug/bug/bugreport/problem (Write what is your problem)', value: 'If you see a bug or problem in this bot. You can use this command and say the problem i will fix this.', inline: true }
     )
     .setImage('https://www.spigotmc.org/attachments/cool-text-commands-271055509278412-png.307323/?__cf_chl_jschl_tk__=0e20103d0926df38b6b9f3aa4a6fcf7b88f3f8a7-1617562430-0-AUOp7yY5gyYs2pdlhGgXiH211NDdYD4CKD6y9N_goPedeBEWzkWeWKUBkfpPiu5t-I9uNcxqHK9SjBU8gblV8hbxEeCT61YHma7F2Ya1ZuIsLsw5n0O6Fq4F7yB22RPzsjZYIOVmHtrdIElFFQErrVHeaEGZEcf5maLrpMUUdf8iuC8DBIcBI844q--Okif_XqxtsOubJTsCNKFkLYXs-a4b-NczzNpex2DFQgQLMshZSA2bQxIYax3IjlMAihpkBI623487bkatckwSGUGriORjEU9muDx2ztBMz_NQFZglNYkdANj_vspCYfuGPa0bkiAhZTsh3Yj3pCaMcg85ki4VIondqzB0EC1rirTlPgqFIAw2G_AbCMvAypl7tqTrtNWfGjty3YJb15xAwVD-uA-NOhbGnlvSaG_xCiwSvdr0Gkoxh-wL2PRf5nPjkQDdkepWVtOu07CljIsN-V04-_I')
     .setTimestamp()
