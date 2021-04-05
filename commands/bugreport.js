@@ -2,8 +2,9 @@
 module.exports = {
     name: "bugreport",
     aliases: ['bug', 'reportbug', 'problem'],
+    permissions: ["SEND_MESSAGES"],
     description: 'let users report bugs',
-    async execute(message, args, client, Discord){
+    async execute(Discord, client, message, args, cmd){
         //the channel you want the bug-reports to be send to
         const channel = client.channels.cache.get('828281141240659998')
 
