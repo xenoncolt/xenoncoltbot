@@ -99,11 +99,7 @@ const video_player = async (guild, song) => {
     const stream = ytdl(song.url, { filter: 'audioonly' });
     song_queue.connection.play(stream, { seek: 0, volume: 1 })
     .on('finish', () => {
-        if (server_queue.loop){
-            play(guild, server_queue.songs[0]);
-        }else{
-            server_queue.songs.shift()
-        }
+        server_queue.songs.shift()
         video_player(guild, song_queue.songs[0]);
     });
     await song_queue.text_channel.send(`🎶 :speaking_head: Now Xenon singing \`${song.title}\``)
