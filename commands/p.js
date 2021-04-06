@@ -100,8 +100,7 @@ const video_player = async (guild, song) => {
     song_queue.connection.play(stream, { seek: 0, volume: 1 })
     .on('finish', () => {
         if (server_queue.loop){
-            server_queue.songs.push(server_queue.song[0])
-            server_queue.songs.shift()
+            play(guild, server_queue.songs[0]);
         }else{
             server_queue.songs.shift()
         }
