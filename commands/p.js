@@ -135,7 +135,7 @@ const resume_song = (message, server_queue) => {
 
 const loop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to loop music!'); 
-    if(!server_queue) return message.channel.send(`There are no songs in queue 😔`);
+    
     server_queue.loop = !server_queue.loop
 
     return message.channel.send(`I have now ${server_queue.loop ? `**Enabled**` : `**Disabled**`} loop.`)
