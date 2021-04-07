@@ -15,7 +15,6 @@ module.exports = {
         { name: 'skip', value: 'Next music', inline: true },
         { name: 'pause', value: 'pause music', inline: true },
         { name: 'resume', value: 'resume music', inline: true },
-        { name: 'loop', value: 'loop music enable/disable', inline: true },
         { name: 'info', value: 'Bot Info', inline: true },
         { name: 'version/versn/vrsn', value: 'Bot version info', inline: true },
         { name: 'instagram', value: 'Bot owner instagram', inline: true },
