@@ -54,8 +54,6 @@ module.exports = {
                     text_channel: message.channel,
                     connection: null,
                     songs: [],
-                    playing: true,
-                    loop: false
                 }
                 
                 
