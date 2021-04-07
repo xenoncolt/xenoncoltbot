@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'p',
-    aliases: ['skip', 'stop', 'pause', 'play', 'loop'],
+    aliases: ['skip', 'stop', 'pause', 'play'],
     permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
@@ -82,7 +82,6 @@ module.exports = {
         else if(cmd === 'stop') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
         else if(cmd === 'play') resume_song(message, server_queue);
-        else if(cmd === 'loop') loop_song(message, server_queue);
     }
     
 }
@@ -99,12 +98,7 @@ const video_player = async (guild, song) => {
     const stream = ytdl(song.url, { filter: 'audioonly' });
     song_queue.connection.play(stream, { seek: 0, volume: 1 })
     .on('finish', () => {
-        if(server_queue.loop){
-            video_player(guild, song_queue.songs[0]); 
-        }else{
-            server_queue.songs.shift()
-        }
-
+        server_queue.songs.shift()
         video_player(guild, song_queue.songs[0]);
     });
     await song_queue.text_channel.send(`🎶 :speaking_head: Now Xenon singing \`${song.title}\``)
@@ -136,12 +130,4 @@ const resume_song = (message, server_queue) => {
     server_queue.connection.dispatcher.resume();
     message.channel.send("Played the song!");
       
-}
-
-const loop_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to loop music!'); 
-    
-    server_queue.loop = !server_queue.loop
-
-    return message.channel.send(`I have now ${server_queue.loop ? `**Enabled**` : `**Disabled**`} loop.`)
 }
