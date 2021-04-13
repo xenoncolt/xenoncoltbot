@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'p',
-    aliases: ['skip', 'stop', 'pause', 'play'],
+    aliases: ['play', 'skip', 'stop', 'pause', 'resume', 'dc', 'leave', 'next'],
     permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
@@ -22,7 +22,7 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
         
-        if (cmd === 'p'){
+        if (cmd === 'p', 'play'){
             if (!args.length) return message.channel.send('You need to send **+p with music name or link**!');
             let song = {};
 
@@ -76,10 +76,10 @@ module.exports = {
             }
         }
 
-        else if(cmd === 'skip') skip_song(message, server_queue);
-        else if(cmd === 'stop') stop_song(message, server_queue);
+        else if(cmd === 'skip', 'next') skip_song(message, server_queue);
+        else if(cmd === 'stop', 'dc', 'leave') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
-        else if(cmd === 'play') resume_song(message, server_queue);
+        else if(cmd === 'resume') resume_song(message, server_queue);
     }
     
 }
