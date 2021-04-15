@@ -108,26 +108,26 @@ const skip_song = (message, server_queue) => {
         return message.channel.send(`There are no songs in queue 😐`);
     }
     server_queue.connection.dispatcher.end();
-    message.channel.send('Skipping music.')
+    message.channel.send('⏭️Skipping music.')
 }
 
 const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to stop music!');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    message.channel.send('Xenon left channel quietly 😔')
+    message.channel.send('⏹️ Xenon left channel quietly 😔')
 }
 
 const pause_song = (message, server_queue) => {
     if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");
     server_queue.connection.dispatcher.pause();
-    message.channel.send("Paused the song!");
+    message.channel.send("⏸️Paused the song!");
       
 }
 
 const resume_song = (message, server_queue) => {
     if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");
     server_queue.connection.dispatcher.resume();
-    message.channel.send("Played the song!");
+    message.channel.send("⏯️Played the song!");
       
 }
