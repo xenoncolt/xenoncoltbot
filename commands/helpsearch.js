@@ -14,7 +14,7 @@ module.exports = {
         { name: '**Your Profile Picture**', value: '\`icon/pfp/profilepic\`', inline: true },
         { name: '**Other Profile Picture**', value: '\`icon/pfp/profilepic (@mention)\`', inline: true }
     )
-    .setFooter('**Attenion:** Use "prefix" before write a command!');
+    .setFooter('Attenion: Use "prefix" before write a command!');
 message.channel.send(newEmbed);
 
     }

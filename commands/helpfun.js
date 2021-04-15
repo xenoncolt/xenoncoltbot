@@ -11,7 +11,7 @@ module.exports = {
     .addFields(
         { name: '**Q&A**', value: '\`xenon (ask a qus)\`', inline: true },
     )
-    .setFooter('**Attenion:** Use "prefix" before write a command!');
+    .setFooter('Attenion: Use "prefix" before write a command!');
 message.channel.send(newEmbed);
 
     }

@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'p',
-    aliases: ['play', 'skip', 'stop', 'pause', 'resume', 'dc', 'leave', 'next'],
+    aliases: ['skip', 'stop', 'pause', 'resume', 'play'],
     permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
@@ -22,7 +22,7 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
         
-        if (cmd === 'p', 'play'){
+        if (cmd === 'p'){
             if (!args.length) return message.channel.send('You need to send **+p with music name or link**!');
             let song = {};
 
@@ -76,10 +76,10 @@ module.exports = {
             }
         }
 
-        else if(cmd === 'skip', 'next') skip_song(message, server_queue);
-        else if(cmd === 'stop', 'dc', 'leave') stop_song(message, server_queue);
+        else if(cmd === 'skip') skip_song(message, server_queue);
+        else if(cmd === 'stop') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
-        else if(cmd === 'resume') resume_song(message, server_queue);
+        else if(cmd === 'resume', 'play') resume_song(message, server_queue);
     }
     
 }
@@ -105,15 +105,17 @@ const video_player = async (guild, song) => {
 const skip_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to skip music!');
     if(!server_queue){
-        return message.channel.send(`There are no songs in queue 😔`);
+        return message.channel.send(`There are no songs in queue 😐`);
     }
     server_queue.connection.dispatcher.end();
+    message.channel.send('Skipping music.')
 }
 
 const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to stop music!');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
+    message.channel.send('Xenon left channel quietly 😔')
 }
 
 const pause_song = (message, server_queue) => {

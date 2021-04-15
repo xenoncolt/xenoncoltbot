@@ -9,7 +9,7 @@ module.exports = {
     .setAuthor('Xenon Colt', 'https://cdn.discordapp.com/attachments/786550102650126358/824307387783315466/XENON_3.png', 'https://discord.gg/Ab6NgSSqXQ')
     .setDescription('\`clear/clr/delete (1~100)\`')
     .setThumbnail('https://cdn.discordapp.com/attachments/786550102650126358/830385393244700702/xenon.gif')
-    .setFooter('**Attenion:** Use "prefix" before write a command!');
+    .setFooter('Attenion: Use "prefix" before write a command!');
 message.channel.send(newEmbed);
 
     }
