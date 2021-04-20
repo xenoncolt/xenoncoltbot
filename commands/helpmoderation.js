@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'helpadministration',
+    name: 'helpmoderation',
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd) {
