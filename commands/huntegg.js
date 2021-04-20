@@ -23,6 +23,7 @@ function guildAttemptsMap(message) {
 
 module.exports = {
     name: "huntegg",
+    permissions: ["SEND_MESSAGES"],
     category: "games",
     description: {
         usage: 'guesseasy <guesseasy number>',
