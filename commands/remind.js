@@ -45,7 +45,7 @@ module.exports = {
         const reminderdm = new Discord.MessageEmbed()
         .setColor('#35F909')
         .setTitle('**REMINDER**')
-        .setDescription(`**It has been ${time} here is your reminder:** ${reminder}`)  
+        .setDescription(`**It has been ${time}. Here is your reminder:** ${reminder}`)  
 
         setTimeout(async function () {
            try{

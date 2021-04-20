@@ -161,5 +161,5 @@ const nowplaying_song = (message, server_queue) => {
         qMsg += `${i}. ${server_queue.songs[i].title}\n`
     }
 
-    message.channel.send('````' + qMsg + 'Requested by: ' + message.author.username + '```');
+    message.channel.send('```' + qMsg + 'Requested by: ' + message.author.username + '```');
 }

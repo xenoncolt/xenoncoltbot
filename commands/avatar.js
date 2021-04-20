@@ -1,5 +1,6 @@
 module.exports = {
     name: 'avatar',
+    permissions: ["SEND_MESSAGES"],
     aliases: ['icon', 'pfp', 'profilepic'],
     description: 'Return a user(s) avatar picture!',
     //Use your own execute parameters
