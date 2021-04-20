@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'helpfun',
+    name: 'helpgame',
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd) {
