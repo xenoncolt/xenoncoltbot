@@ -45,21 +45,22 @@ module.exports = (Discord, client, message) => {
       "MANAGE_ROLES",
       "MANAGE_WEBHOOKS",
       "MANAGE_EMOJIS",
-    ]
+  ]
     
-    if(command.permissions.length){
-      let invalidPerms = []
-      for(const perm of command.permissions){
-        if(!validPermissions.includes(perm)){
-          return console.log(`Invalid Permissions ${perm}`);
-        }
-        if(!message.member.hasPermission(perm)){
+  if(command.permissions.length){
+    let invalidPerms = []
+    for(const perm of command.permissions){
+      if(!validPermissions.includes(perm)){
+        return console.log(`Invalid Permissions ${perm}`);
+      }
+      if(!message.member.hasPermission(perm)){
           invalidPerms.push(perm);
-        }
+          break;
       }
-      if (invalidPerms.length){
-        return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
-      }
+    }
+    if (invalidPerms.length){
+      return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
+    }
   }
       
     
