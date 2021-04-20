@@ -1,6 +1,7 @@
 module.exports = {
     name: 'instagram',
     aliases: ['insta'],
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "This is a instagram link command!",
     execute(Discord, client, message, args, cmd) {

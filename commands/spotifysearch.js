@@ -4,6 +4,7 @@ const Discord = require('discord.js'); // defining Discord
 module.exports = {
     name: "spotifysearch",
     aliases: ['spoti'],
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "This is a spotify search command link.",
 

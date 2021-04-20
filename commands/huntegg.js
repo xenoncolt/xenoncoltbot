@@ -23,6 +23,7 @@ function guildAttemptsMap(message) {
 
 module.exports = {
     name: "huntegg",
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     category: "games",
     description: {

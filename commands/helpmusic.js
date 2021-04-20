@@ -1,5 +1,6 @@
 module.exports = {
     name: 'helpmusic',
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd) {

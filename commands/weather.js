@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'weather',
     aliases: ['weather'],
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     async execute(Discord, client, message, args, cmd) {
     

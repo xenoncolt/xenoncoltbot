@@ -1,6 +1,7 @@
 module.exports = {
     name: 'clear',
     aliases: ['clr', 'delete'],
+    cooldown: 0,
     permissions: ["ADMINISTRATOR", "MANAGE_MESSAGES"],
     description: "This is a clear messages command!",
     async execute(Discord, client, message, args, cmd){

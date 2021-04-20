@@ -1,5 +1,6 @@
 module.exports = {
     name: 'invite',
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "This is a invite command!",
     execute(Discord, client, message, args, cmd){

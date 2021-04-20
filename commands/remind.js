@@ -2,6 +2,7 @@ const ms = require('ms')
 
 module.exports = {
     name: "remind",
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description:{
         usage: "remind <time> <reminder>",

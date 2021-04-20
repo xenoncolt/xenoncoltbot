@@ -1,6 +1,7 @@
 module.exports = {
     name: 'facebook',
     aliases: ['fb'],
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "This is a facebook link command!",
     execute(Discord, client, message, args, cmd) {

@@ -2,6 +2,7 @@
 module.exports = {
     name: "bugreport",
     aliases: ['bug', 'reportbug', 'problem'],
+    cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: 'let users report bugs',
     async execute(Discord, client, message, args, cmd){
