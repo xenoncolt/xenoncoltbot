@@ -12,7 +12,7 @@ module.exports = {
     .addFields(
         { name: '**SONG PLAY**', value: '\`p (SONG NAME/LINK)\`', inline: true },
         { name: '**PAUSE**', value: '\`pause\`', inline: true },
-        { name: '**RESUME**', value: '\`resume\`, \`play\`', inline: true },
+        { name: '**RESUME**', value: '\`resume\`', inline: true },
         { name: '**LOOP (On/Off)**', value: '\`loop\`', inline: true },
         { name: '**NEXT MUSIC**', value: '\`skip\`', inline: true },
         { name: '**STOP MUSIC**', value: '\`stop\`', inline: true },

@@ -81,7 +81,7 @@ module.exports = {
         else if(cmd === 'skip') skip_song(message, server_queue);
         else if(cmd === 'stop') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
-        else if(cmd === 'resume', 'play') resume_song(message, server_queue);
+        else if(cmd === 'resume') resume_song(message, server_queue);
         else if(cmd === 'loop') loop_song(message, server_queue);
         else if(cmd === 'nowplaying', 'np', 'q') nowplaying_song(message, server_queue);
     }
