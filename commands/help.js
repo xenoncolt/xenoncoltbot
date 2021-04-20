@@ -15,6 +15,7 @@ module.exports = {
         { name: '**Moderation** 🛠️', value: '\`helpmoderation\`', inline: true },
         { name: '**Utility**👤', value: '\`helputility\`', inline: true },
         { name: '**Fun**🎪', value: '\`helpfun\`', inline: true },
+        { name: '**Games**🎮', value: '\`helpgame\`', inline: true },
         { name: '**Bot Info** ❕', value: '\`info\`', inline: true },
         { name: '**Bot Invite** ✉️', value: '\`invite\`', inline: true },
         { name: '**Report Bug** 🗳️', value: '\`reportbug/bug/bugreport/problem (WRITE WHAT IS YOUR PROBLEMS)\`', inline: true }

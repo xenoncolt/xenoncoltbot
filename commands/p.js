@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'p',
-    aliases: ['skip', 'stop', 'pause', 'resume', 'play'],
+    aliases: ['skip', 'stop', 'pause', 'resume', 'play', 'loop', 'nowplaying', 'np', 'q'],
     permissions: ["SEND_MESSAGES"], 
     description: 'Advanced music bot',
     async execute(Discord, client, message, args, cmd){
@@ -41,7 +41,7 @@ module.exports = {
                 if (video){
                     song = { title: video.title, url: video.url }
                 } else {
-                     message.channel.send('Xenon can not finding song.');
+                     message.channel.send('Sundai can not finding song.');
                 }
 
             }
@@ -53,7 +53,9 @@ module.exports = {
                     voice_channel: voice_channel,
                     text_channel: message.channel,
                     connection: null,
-                    songs: []
+                    songs: [],
+                    playing: true,
+                    loop: false
                 }
                 
                 
@@ -67,7 +69,7 @@ module.exports = {
                     video_player(message.guild, queue_constructor.songs[0]);
                 } catch (err) {
                     queue.delete(message.guild.id);
-                    message.channel.send('Xenon found an error connecting!');
+                    message.channel.send('Sundai found an error connecting!');
                     throw err;
                 }
             } else{
@@ -80,6 +82,8 @@ module.exports = {
         else if(cmd === 'stop') stop_song(message, server_queue);
         else if(cmd === 'pause') pause_song(message, server_queue);
         else if(cmd === 'resume', 'play') resume_song(message, server_queue);
+        else if(cmd === 'loop') loop_song(message, server_queue);
+        else if(cmd === 'nowplaying', 'np', 'q') nowplaying_song(message, server_queue);
     }
     
 }
@@ -96,10 +100,10 @@ const video_player = async (guild, song) => {
     const stream = ytdl(song.url, { filter: 'audioonly' });
     song_queue.connection.play(stream, { seek: 0, volume: 1 })
     .on('finish', () => {
-        song_queue.songs.shift();
+        if (!song_queue.loop) song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
-    await song_queue.text_channel.send(`🎶 :speaking_head: Now Xenon singing \`${song.title}\``)
+    await song_queue.text_channel.send(`🎶 :speaking_head: Now Sundai singing \`${song.title}\``)
 }
 
 const skip_song = (message, server_queue) => {
@@ -108,26 +112,54 @@ const skip_song = (message, server_queue) => {
         return message.channel.send(`There are no songs in queue 😐`);
     }
     server_queue.connection.dispatcher.end();
-    message.channel.send('⏭️Skipping music.')
+    message.channel.send('Skipping music.')
+    message.react('⏭️');
 }
 
 const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to stop music!');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    message.channel.send('⏹️ Xenon left channel quietly 😔')
+    message.channel.send('Sundai left channel quietly 😔')
+    message.react('⏹️');
 }
 
 const pause_song = (message, server_queue) => {
     if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");
     server_queue.connection.dispatcher.pause();
-    message.channel.send("⏸️Paused the song!");
+    message.channel.send("Paused the song!");
+    message.react('⏸️');
       
 }
 
 const resume_song = (message, server_queue) => {
     if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");
     server_queue.connection.dispatcher.resume();
-    message.channel.send("⏯️Played the song!");
+    message.channel.send("Played the song!");
+    message.react('⏯️');
       
+}
+
+const loop_song = (message, server_queue) => {
+    if (!message.member.voice.channel) return message.channel.send('You need to be in a **channel** to loop music!');
+    if (!server_queue) return message.channel.send('There is nothing playing.')
+
+    server_queue.loop = !server_queue.loop
+
+    return message.channel.send(`I have now ${server_queue.loop ? `**Enabled**` : `**Disabled**`} loop.`)
+}
+
+const nowplaying_song = (message, server_queue) => {
+    if(!server_queue.connection) return message.channel.send(`There is no music playing.`)
+    
+    if(!message.member.voice.channel) return message.channel.send('You are not in the join voice channel.')
+
+    let nowPlaying = server_queue.songs[0];
+    let qMsg = `Now playing: ${nowPlaying.title}\n----------------------\n`
+    
+    for(var i = 1; i < server_queue.songs.length; i++){
+        qMsg += `${i}. ${server_queue.songs[i].title}\n`
+    }
+
+    message.channel.send('````' + qMsg + 'Requested by: ' + message.author.username + '```');
 }

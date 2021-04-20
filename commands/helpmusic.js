@@ -13,11 +13,14 @@ module.exports = {
         { name: '**SONG PLAY**', value: '\`p (SONG NAME/LINK)\`', inline: true },
         { name: '**PAUSE**', value: '\`pause\`', inline: true },
         { name: '**RESUME**', value: '\`resume\`, \`play\`', inline: true },
+        { name: '**LOOP (On/Off)**', value: '\`loop\`', inline: true },
         { name: '**NEXT MUSIC**', value: '\`skip\`', inline: true },
         { name: '**STOP MUSIC**', value: '\`stop\`', inline: true },
+        { name: '**NOW PLAYING**', value: '\`nowplaying\`, \`np\`, \`q\`', inline: true}
     )
     .setFooter('Attenion: Use "prefix" before write a command!');
-message.channel.send(newEmbed);
+message.author.send(newEmbed);
+message.channel.send('Please check your **DM**.');
 
     }
 }

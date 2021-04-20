@@ -13,6 +13,7 @@ module.exports = {
     .setTimestamp()
 	.setFooter('Please click blue color "Instagram ID" ');
 
-message.channel.send(newEmbed);
+message.author.send(newEmbed);
+message.channel.send('Please check your **DM**.');
     }
 }

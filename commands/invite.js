@@ -8,7 +8,8 @@ module.exports = {
     .setTitle('INVITE')
     .setURL('https://discord.com/oauth2/authorize?client_id=809990320405348390&permissions=8&scope=bot')
     .setDescription('Click \`INVITE\`')
-message.channel.send(newEmbed);
+message.author.send(newEmbed);
+message.channel.send('Please check your **DM**.');
 
     }
 }

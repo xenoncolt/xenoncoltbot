@@ -30,7 +30,7 @@ module.exports = {
         .addField('Feels like', `${current.feelslike}°`, true)
         .addField('Humidity', `${current.humidity}%`, true)
         .setTimestamp()
-        .setFooter('Happy Journey from Xenon.');
+        .setFooter('Happy Journey from Sundai.');
 
         message.channel.send(weatherinfo)
         })        
