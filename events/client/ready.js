@@ -1,3 +1,3 @@
 module.exports = ()=>{
-    console.log('xenon command is online!');
+    console.log('Sundai command is online!');
 }

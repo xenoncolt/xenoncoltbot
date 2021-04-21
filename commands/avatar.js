@@ -20,7 +20,7 @@ module.exports = {
             const avatermentionembed = new Discord.MessageEmbed()
 
             .setTitle(`**${user.username}'s Avatar **`)
-            .setImage(message.author.displayAvatarURL({dynamic: true}))
+            .setImage(user.displayAvatarURL({dynamic: true}))
 
             return (avatermentionembed);
         });

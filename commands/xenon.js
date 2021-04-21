@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-  name: 'xenon',
+  name: 'sundai',
   cooldown: 0,
   permissions: ["SEND_MESSAGES"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
@@ -14,7 +14,7 @@ module.exports = {
     
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
       const embed = new MessageEmbed() 
-        .setAuthor('Xenon says...')
+        .setAuthor('Sundai says...')
         .setColor('RANDOM')
         .addField('Question:', question)
         .addField('Answer:', replies[result]);

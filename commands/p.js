@@ -122,7 +122,7 @@ const stop_song = (message, server_queue) => {
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
     message.channel.send('Sundai left channel quietly 😔')
-    message.react('⏹️');
+    message.react('🛑');
 }
 
 const pause_song = (message, server_queue) => {

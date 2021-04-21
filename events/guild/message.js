@@ -55,7 +55,6 @@ module.exports = (Discord, client, message) => {
       }
       if(!message.member.hasPermission(perm)){
           invalidPerms.push(perm);
-          break;
       }
     }
     if (invalidPerms.length){

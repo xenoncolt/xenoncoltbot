@@ -9,7 +9,7 @@ client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
 client.once('ready', () => {
-    console.log('xenon command is online!');
+    console.log('sundai command is online!');
     client.user.setActivity(`${client.guilds.cache.map(s => s.memberCount).reduce((a, b) => a + b)} Users | +help`, { type: 'WATCHING' });
 });
 
