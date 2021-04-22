@@ -1,18 +1,17 @@
-const { MessageFlags } = require('discord.js');
 var Scraper = require('images-scraper');
 
 const google = new Scraper({
     puppeteer: {
-        headless: false,
-    },
-});
+        headless: true
+    }
+})
 
 module.exports = {
     name: 'image',
     aliases: ['img'],
     cooldown: 0,
     permissions: ["SEND_MESSAGES"],
-    description: 'Return a user(s) avatar picture!',
+    description: '!',
     
     async execute(Discord, client, message, args, cmd) {
         const image_query = args.join(' ');
