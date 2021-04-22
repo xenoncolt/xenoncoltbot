@@ -6,25 +6,17 @@ module.exports = {
     description: 'Return a user(s) avatar picture!',
     //Use your own execute parameters
     execute(Discord, client, message, args, cmd) {
+        let member = message.mentions.users.first() || message.author
 
-        if (!message.mentions.users.size) {
-            const avaterembed = new Discord.MessageEmbed()
+        let avatar = member.displayAvatarURL({size: 1024})
 
-            .setTitle('**Your Avatar **')
-            .setImage(message.author.displayAvatarURL({dynamic: true}))
+        const avatermentionembed = new Discord.MessageEmbed()
 
-            return message.channel.send(avaterembed);
-        }
+        .setColor('RANDOM')
+        .setTitle(`${member.username}`)
+        .setImage(avatar)
+        .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({dynamic: true})}`)
 
-        const avatar_list = message.mentions.users.map(user => {
-            const avatermentionembed = new Discord.MessageEmbed()
-
-            .setTitle(`**${user.username}'s Avatar **`)
-            .setImage(user.displayAvatarURL({dynamic: true}))
-
-            return (avatermentionembed);
-        });
-
-        message.channel.send(avatar_list);
+        message.channel.send(avatermentionembed);
     }
 }
