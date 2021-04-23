@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "!",
-    async execute(Discord, client, message, args, cmd){
+    async execute(Discord, client, message, args, cmd) {
 
         const animewallpaper = await HMfull.HMtai.sfw.wallpaper()
 
