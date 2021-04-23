@@ -7,7 +7,7 @@ module.exports = {
     description: "!",
     async execute(Discord, client, message, args, cmd) {
 
-        const slap = await HMfull.Nekos.sfw.hug()
+        const slap = await HMfull.Nekos.sfw.slap()
 
             const imageEmbed = new Discord.MessageEmbed()
 
