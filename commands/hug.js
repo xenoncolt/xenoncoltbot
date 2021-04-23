@@ -5,7 +5,7 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     cooldown: 0,
     description: "!",
-    execute(Discord, client, message, args, cmd){
+    async execute(Discord, client, message, args, cmd) {
 
         const hug = await HMfull.Nekos.sfw.hug()
 
