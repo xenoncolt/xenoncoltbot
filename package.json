@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.8",
     "fs": "0.0.1-security",
+    "hmfull": "^1.2.3",
     "images-scraper": "^6.2.1",
     "weather-js": "^2.0.0",
     "yt-search": "^2.7.5",
