@@ -1,18 +1,19 @@
 const HMfull = require("hmfull");
 
 module.exports = {
-    name: 'kiss',
+    name: 'nekowaifu',
+    aliases: ['nekow', 'nw'],
     cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd){
 
-        const kiss = await HMfull.Nekos.sfw.kiss()
+        const neko = await HMfull.HMtai.sfw.neko()
 
             const imageEmbed = new Discord.MessageEmbed()
 
             .setColor('RANDOM')
-            .setImage(kiss.url)
+            .setImage(neko.url)
             .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
                 message.channel.send(imageEmbed)
         

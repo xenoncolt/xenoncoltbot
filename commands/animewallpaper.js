@@ -1,18 +1,18 @@
 const HMfull = require("hmfull");
 
 module.exports = {
-    name: 'kiss',
+    name: 'animewallpaper',
     cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd){
 
-        const kiss = await HMfull.Nekos.sfw.kiss()
+        const animewallpaper = await HMfull.HMtai.sfw.wallpaper()
 
             const imageEmbed = new Discord.MessageEmbed()
 
             .setColor('RANDOM')
-            .setImage(kiss.url)
+            .setImage(animewallpaper.url)
             .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
                 message.channel.send(imageEmbed)
         

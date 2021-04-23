@@ -1,6 +1,4 @@
-const image_api = require('anime-images-api')
-
-const api = new image_api('GET')
+const HMfull = require("hmfull");
 
 module.exports = {
     name: 'pat',
@@ -9,13 +7,14 @@ module.exports = {
     description: "!",
     execute(Discord, client, message, args, cmd){
 
-        api.getPatImage().then(res => {
+        const pat = await HMfull.Nekos.sfw.pat()
+
             const imageEmbed = new Discord.MessageEmbed()
 
             .setColor('RANDOM')
-            .setImage(res.image)
+            .setImage(pat.url)
             .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
                 message.channel.send(imageEmbed)
-        })
+        
     }
 }

@@ -15,7 +15,7 @@ module.exports = {
     
     async execute(Discord, client, message, args, cmd) {
         const image_query = args.join(' ');
-        if(!image_query) return message.channel.send('Please enter a image name.')
+        if(!image_query) return message.channel.send('Please enter a image name.');
 
         const image_results = await google.scrape(image_query, 1);
         const imageEmbed = new Discord.MessageEmbed()

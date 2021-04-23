@@ -12,15 +12,17 @@ module.exports = {
     .addFields(
         { name: '**spotify**', value: '\`spotifysearch/spoti (SONG NAME)\`', inline: true },
         { name: '**Weather**', value: '\`weather (CITY NAME, COUNTRY NAME)\`', inline: true },
-        { name: '**Any Image**', value: '\`image (IMAGE NAME)\`, \`img (IMAGE NAME)\`', inline: true },
+        //{ name: '**Any Image**', value: '\`image (IMAGE NAME)\`, \`img (IMAGE NAME)\`', inline: true },
         { name: '**Hug GIF**', value: '\`hug\`', inline: true },
-        { name: '**Kill GIF**', value: '\`kill\`', inline: true },
+        //{ name: '**Kill GIF**', value: '\`kill\`', inline: true },
         { name: '**Kiss GIF**', value: '\`kiss\`', inline: true },
         { name: '**Pat GIF**', value: '\`pat\`', inline: true },
         { name: '**Punch GIF**', value: '\`punch\`', inline: true },
         { name: '**Slap GIF**', value: '\`slap\`', inline: true },
-        { name: '**Wink GIF**', value: '\`wink\`', inline: true },
+        //{ name: '**Wink GIF**', value: '\`wink\`', inline: true },
         { name: '**Random GIF**', value: '\`random\`, \`rand\`', inline: true },
+        { name: '**Anime Wallpaper**', value: '\`animewallpaper\`', inline: true },
+        { name: '**Neko Waifu**', value: '\`nekowaifu\`, \`nekow\`, \`nw\`', inline: true },
         { name: '**Your Profile Picture**', value: '\`icon/pfp/profilepic\`', inline: true },
         { name: '**Other Profile Picture**', value: '\`icon/pfp/profilepic (@mention)\`', inline: true }
     )

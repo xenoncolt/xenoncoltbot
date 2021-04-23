@@ -1,6 +1,4 @@
-const image_api = require('anime-images-api')
-
-const api = new image_api('GET')
+const HMfull = require("hmfull");
 
 module.exports = {
     name: 'slap',
@@ -9,13 +7,14 @@ module.exports = {
     description: "!",
     execute(Discord, client, message, args, cmd){
 
-        api.getSlapImage().then(res => {
+        const slap = await HMfull.Nekos.sfw.hug()
+
             const imageEmbed = new Discord.MessageEmbed()
 
             .setColor('RANDOM')
-            .setImage(res.image)
+            .setImage(slap.url)
             .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
                 message.channel.send(imageEmbed)
-        })
+        
     }
 }
