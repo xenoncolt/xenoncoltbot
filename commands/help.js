@@ -11,6 +11,7 @@ module.exports = {
     .setThumbnail('https://cdn.discordapp.com/attachments/786550102650126358/830385393244700702/xenon.gif')
     .addFields(
         { name: '**Prefix**', value: '\`+\`', inline: true },
+        { name: '**ANIME**👩', value: '\`helpanime\`', inline: true },
         { name: '**Music** 🎵', value: '\`helpmusic\`', inline: true },
         { name: '**Search🔎**', value: '\`helpsearch\`', inline: true },
         { name: '**Moderation** 🛠️', value: '\`helpmoderation\`', inline: true },

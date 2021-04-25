@@ -9,10 +9,13 @@ module.exports = {
     description: "!",
     execute(Discord, client, message, args, cmd){
 
+        let member = message.mentions.users.first() || message.author
+
         api.getKillImage().then(res => {
             const imageEmbed = new Discord.MessageEmbed()
 
             .setColor('RANDOM')
+            .setTitle(`${message.author.username} kill ${member.username}`)
             .setImage(res.image)
             .setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
                 message.channel.send(imageEmbed)

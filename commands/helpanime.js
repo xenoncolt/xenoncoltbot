@@ -1,20 +1,25 @@
 module.exports = {
-    name: 'helpsearch',
+    name: 'helpanime',
     cooldown: 0,
     permissions: ["SEND_MESSAGES"],
     description: "!",
     execute(Discord, client, message, args, cmd) {
         const newEmbed = new Discord.MessageEmbed()
     .setColor('RANDOM')
-    .setTitle('Search🔎')
+    .setTitle('ANIME👩')
     .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`, `https://discord.gg/Ab6NgSSqXQ`)
     .setThumbnail('https://cdn.discordapp.com/attachments/786550102650126358/830385393244700702/xenon.gif')
     .addFields(
-        { name: '**spotify**', value: '\`spotifysearch/spoti (SONG NAME)\`', inline: true },
-        { name: '**Weather**', value: '\`weather (CITY NAME, COUNTRY NAME)\`', inline: true },
-        //{ name: '**Any Image**', value: '\`image (IMAGE NAME)\`, \`img (IMAGE NAME)\`', inline: true },
-        { name: '**Your Profile Picture**', value: '\`icon/pfp/profilepic\`', inline: true },
-        { name: '**Other Profile Picture**', value: '\`icon/pfp/profilepic (@mention)\`', inline: true }
+        { name: '**Hug GIF**', value: '\`hug\`', inline: true },
+        //{ name: '**Kill GIF**', value: '\`kill\`', inline: true },
+        { name: '**Kiss GIF**', value: '\`kiss\`', inline: true },
+        { name: '**Pat GIF**', value: '\`pat\`', inline: true },
+        { name: '**Punch GIF**', value: '\`punch\`', inline: true },
+        { name: '**Slap GIF**', value: '\`slap\`', inline: true },
+        //{ name: '**Wink GIF**', value: '\`wink\`', inline: true },
+        { name: '**Random GIF**', value: '\`random\`, \`rand\`', inline: true },
+        { name: '**Anime Wallpaper**', value: '\`animewallpaper\`', inline: true },
+        { name: '**Neko Waifu**', value: '\`nekowaifu\`, \`nekow\`, \`nw\`', inline: true },
     )
     .setFooter('Attenion: Use "prefix" before write a command!');
 
